@@ -1,0 +1,12 @@
+{
+  "title": "Digital Marketing",
+  "icon": "📈",
+  "description": "Data-driven marketing strategies that attract, convert, and retain customers through SEO, paid ads, content, and analytics.",
+  "features": [
+    "SEO & Content Strategy",
+    "Performance Marketing (Google/Meta)",
+    "Social Media Growth",
+    "Analytics & Conversion Optimization"
+  ],
+  "order": 4
+}

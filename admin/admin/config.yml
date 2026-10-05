@@ -1,0 +1,105 @@
+# Decap CMS Configuration for KMStudio
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Local backend for testing (optional - uncomment when developing locally)
+# local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL (update after deploying)
+site_url: https://kmstudio.tech
+display_url: https://kmstudio.tech
+logo_url: /admin/logo.png
+
+# Enable editorial workflow (optional - draft → review → publish)
+# publish_mode: editorial_workflow
+
+collections:
+  # ========== SITE SETTINGS ==========
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "data/settings.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: false }
+
+  # ========== HERO SECTION ==========
+  - name: "hero"
+    label: "Hero Section"
+    files:
+      - name: "hero"
+        label: "Hero Content"
+        file: "data/hero.json"
+        fields:
+          - { label: "Badge Text", name: "badge", widget: "string" }
+          - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Highlighted Text", name: "highlight", widget: "string" }
+          - { label: "Sub Headline", name: "subheadline", widget: "text" }
+          - { label: "Primary Button Text", name: "primary_btn", widget: "string" }
+          - { label: "Secondary Button Text", name: "secondary_btn", widget: "string" }
+
+  # ========== SERVICES ==========
+  - name: "services"
+    label: "Services"
+    folder: "data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Features (one per line)", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  # ========== ABOUT / WHY US ==========
+  - name: "about"
+    label: "About Section"
+    files:
+      - name: "about"
+        label: "About Content"
+        file: "data/about.json"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+  # ========== PROCESS STEPS ==========
+  - name: "process"
+    label: "Process Steps"
+    folder: "data/process"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Step Number", name: "number", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int" }
+
+  # ========== FULL PAGE (Advanced) ==========
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "homepage"
+        label: "Homepage (Full HTML)"
+        file: "index.html"
+        fields:
+          - { label: "Body", name: "body", widget: "code", default_language: "html", allow_language_selection: false }

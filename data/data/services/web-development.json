@@ -1,0 +1,12 @@
+{
+  "title": "Web Development",
+  "icon": "🌐",
+  "description": "High-performance, SEO-optimized websites and web applications built with modern tech stacks that convert visitors into customers.",
+  "features": [
+    "Custom Website Development",
+    "Web Applications & SaaS",
+    "E-commerce Solutions",
+    "Performance & SEO Optimization"
+  ],
+  "order": 2
+}

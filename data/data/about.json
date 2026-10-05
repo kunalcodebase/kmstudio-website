@@ -1,0 +1,20 @@
+{
+  "label": "Why KMStudio",
+  "heading": "We Build Technology That Drives Real Business Results",
+  "paragraph1": "KMStudio is a modern digital agency focused on creating intelligent, scalable solutions. We combine deep technical expertise with strategic thinking to help businesses automate, grow, and stay ahead.",
+  "paragraph2": "Whether you need AI-powered automation, a high-converting website, a mobile app, or a complete digital growth system — we deliver with precision and care.",
+  "features": [
+    {
+      "title": "Strategy + Execution",
+      "description": "We don’t just build — we plan for growth from day one."
+    },
+    {
+      "title": "Modern Tech Stack",
+      "description": "Future-proof solutions using the latest frameworks and AI tools."
+    },
+    {
+      "title": "Transparent Collaboration",
+      "description": "Clear communication, regular updates, and full ownership of your project."
+    }
+  ]
+}

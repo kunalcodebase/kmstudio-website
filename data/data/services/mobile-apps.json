@@ -1,0 +1,12 @@
+{
+  "title": "Mobile App Development",
+  "icon": "📱",
+  "description": "Native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences and drive engagement.",
+  "features": [
+    "iOS & Android Apps",
+    "Cross-Platform (Flutter / React Native)",
+    "UI/UX Design for Mobile",
+    "App Store Optimization"
+  ],
+  "order": 3
+}

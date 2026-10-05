@@ -1,0 +1,12 @@
+{
+  "title": "AI Automation",
+  "icon": "🤖",
+  "description": "Streamline operations with custom AI agents, workflow automation, and intelligent systems that save time and reduce costs.",
+  "features": [
+    "Custom AI Agents & Chatbots",
+    "Workflow Automation (n8n, Make, Zapier)",
+    "Process Optimization",
+    "AI Integration for Business"
+  ],
+  "order": 1
+}
