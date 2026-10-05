@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  # No build command needed for pure static site
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Optional: Form handling can also be done with Netlify Forms
+# Just add netlify attribute to your form if you prefer Netlify Forms over Formspree

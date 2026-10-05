@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>KMStudio | AI Automation, Web Development, Mobile Apps & Digital Marketing</title>
+  <meta name="description" content="KMStudio helps businesses grow with AI automation, custom web & mobile app development, and results-driven digital marketing. Intelligent systems. Powerful apps. Measurable growth.">
+  <meta name="keywords" content="AI automation agency, web development company, mobile app development, digital marketing services, KMStudio, AI powered websites, business process automation">
+  <meta name="author" content="KMStudio">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="KMStudio | AI Automation, Web & App Development">
+  <meta property="og:description" content="Intelligent Systems. Powerful Apps. Measurable Growth. AI Automation • Web Development • Mobile Apps • Digital Marketing">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kmstudio.tech">
+  <meta property="og:site_name" content="KMStudio">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KMStudio | AI Automation, Web & App Development">
+  <meta name="twitter:description" content="Intelligent Systems. Powerful Apps. Measurable Growth.">
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #050a14;
+      --bg-secondary: #0a1628;
+      --bg-card: #0f1c30;
+      --bg-card-hover: #152238;
+      --accent: #00d4ff;
+      --accent-dim: #00a8cc;
+      --accent-glow: rgba(0, 212, 255, 0.25);
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border: rgba(0, 212, 255, 0.12);
+      --gradient: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      background: rgba(5, 10, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 12px 0;
+      background: rgba(5, 10, 20, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--gradient);
+      color: #000 !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px var(--accent-glow);
+      color: #000 !important;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 140px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 100, 200, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+
+    .hero h1 .highlight {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 70px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-item h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ========== SECTIONS COMMON ========== */
+    section {
+      padding: 100px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      background: var(--bg-secondary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 212, 255, 0.3);
+      background: var(--bg-card-hover);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card ul li {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-card ul li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ========== ABOUT / WHY ========== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .about-features {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .feature-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(0, 212, 255, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .feature-text p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .about-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      position: relative;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(0,212,255,0.3), transparent 50%);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tech-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .tech-item:hover {
+      border-color: var(--accent);
+      transform: scale(1.03);
+    }
+
+    .tech-item span {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .tech-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ========== PROCESS ========== */
+    .process {
+      background: var(--bg-secondary);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-card);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ========== CTA ========== */
+    .cta {
+      padding: 100px 24px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0a1a30 0%, #0f2540 100%);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 24px;
+      padding: 70px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .cta-box p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 36px;
+      position: relative;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      background: var(--bg-secondary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-info > p {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .contact-item h4 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .contact-item p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 60px 24px 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: var(--text-primary);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-stats {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 120px 20px 60px;
+      }
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .cta-box {
+        padding: 50px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <!-- Inline SVG Logo (Circuit KM style matching your selection) -->
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 8 L8 40 L18 40 L18 28 L28 40 L40 40 L26 24 L40 8 L28 8 L18 20 L18 8 Z" fill="#0A1628" stroke="#00D4FF" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="2" fill="#00D4FF"/>
+          <circle cx="12" cy="36" r="2" fill="#00D4FF"/>
+          <circle cx="36" cy="12" r="2" fill="#00D4FF"/>
+          <circle cx="36" cy="36" r="2" fill="#00D4FF"/>
+          <path d="M12 14 L12 34" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <path d="M14 12 L34 12" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="3 2"/>
+        </svg>
+        <span class="logo-text">KM<span>Studio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-badge">AI-Powered Digital Agency</div>
+      <h1>
+        Intelligent Systems.<br>
+        <span class="highlight">Powerful Apps.</span><br>
+        Measurable Growth.
+      </h1>
+      <p class="hero-sub">
+        KMStudio builds AI automation, high-performance websites, mobile applications, and data-driven marketing systems that help businesses scale faster and smarter.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Start Your Project →</a>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Projects Delivered</p>
+        </div>
+        <div class="stat-item">
+          <h3>4</h3>
+          <p>Core Services</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Client-Focused</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2>End-to-End Digital Solutions</h2>
+        <p>From intelligent automation to beautiful apps and growth marketing — we build the systems that power modern businesses.</p>
+      </div>
+      <div class="services-grid">
+        <!-- AI Automation -->
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>AI Automation</h3>
+          <p>Streamline operations with custom AI agents, workflow automation, and intelligent systems that save time and reduce costs.</p>
+          <ul>
+            <li>Custom AI Agents & Chatbots</li>
+            <li>Workflow Automation (n8n, Make, Zapier)</li>
+            <li>Process Optimization</li>
+            <li>AI Integration for Business</li>
+          </ul>
+        </div>
+        <!-- Web Development -->
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>High-performance, SEO-optimized websites and web applications built with modern tech stacks that convert visitors into customers.</p>
+          <ul>
+            <li>Custom Website Development</li>
+            <li>Web Applications & SaaS</li>
+            <li>E-commerce Solutions</li>
+            <li>Performance & SEO Optimization</li>
+          </ul>
+        </div>
+        <!-- Mobile App Development -->
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile App Development</h3>
+          <p>Native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences and drive engagement.</p>
+          <ul>
+            <li>iOS & Android Apps</li>
+            <li>Cross-Platform (Flutter / React Native)</li>
+            <li>UI/UX Design for Mobile</li>
+            <li>App Store Optimization</li>
+          </ul>
+        </div>
+        <!-- Digital Marketing -->
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Digital Marketing</h3>
+          <p>Data-driven marketing strategies that attract, convert, and retain customers through SEO, paid ads, content, and analytics.</p>
+          <ul>
+            <li>SEO & Content Strategy</li>
+            <li>Performance Marketing (Google/Meta)</li>
+            <li>Social Media Growth</li>
+            <li>Analytics & Conversion Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-label">Why KMStudio</span>
+          <h2>We Build Technology That Drives Real Business Results</h2>
+          <p>KMStudio is a modern digital agency focused on creating intelligent, scalable solutions. We combine deep technical expertise with strategic thinking to help businesses automate, grow, and stay ahead.</p>
+          <p>Whether you need AI-powered automation, a high-converting website, a mobile app, or a complete digital growth system — we deliver with precision and care.</p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Strategy + Execution</h4>
+                <p>We don’t just build — we plan for growth from day one.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Modern Tech Stack</h4>
+                <p>Future-proof solutions using the latest frameworks and AI tools.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Transparent Collaboration</h4>
+                <p>Clear communication, regular updates, and full ownership of your project.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="tech-stack">
+            <div class="tech-item">
+              <span>⚡</span>
+              <p>AI & Automation</p>
+            </div>
+            <div class="tech-item">
+              <span>🧩</span>
+              <p>React / Next.js</p>
+            </div>
+            <div class="tech-item">
+              <span>📱</span>
+              <p>Flutter / RN</p>
+            </div>
+            <div class="tech-item">
+              <span>🔍</span>
+              <p>SEO & Growth</p>
+            </div>
+            <div class="tech-item">
+              <span>🎨</span>
+              <p>UI/UX Design</p>
+            </div>
+            <div class="tech-item">
+              <span>📊</span>
+              <p>Analytics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How We Work</span>
+        <h2>Simple, Transparent Process</h2>
+        <p>From first conversation to final delivery — a clear path to results.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Discover</h3>
+          <p>We understand your goals, challenges, and vision through deep discovery sessions.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Strategy</h3>
+          <p>We design a clear roadmap with the right technology, timeline, and success metrics.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Build</h3>
+          <p>Our team develops, designs, and iterates with continuous feedback from you.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Launch & Grow</h3>
+          <p>We deploy, optimize, and support your solution for long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Build Something Intelligent?</h2>
+        <p>Let’s discuss how AI automation, a powerful app, or a high-converting website can transform your business.</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
+          <a href="mailto:info@kmstudio.tech" class="btn btn-secondary">info@kmstudio.tech</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INQUIRY / CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 50px;">
+        <span class="section-label">Inquiry & Leads</span>
+        <h2>Start Your Project Inquiry</h2>
+        <p>Fill out the form below and our team will respond within 24 hours. We look forward to understanding your goals.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 style="font-size:1.6rem; margin-bottom:20px;">Contact Details</h2>
+          <p style="margin-bottom:28px;">Prefer to reach us directly? Use the details below.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:info@kmstudio.tech" style="color:var(--accent); text-decoration:none;">info@kmstudio.tech</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <h4>Phone / WhatsApp</h4>
+                <p><a href="tel:+919998957265" style="color:var(--accent); text-decoration:none;">+91 99989 57265</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🌐</div>
+              <div>
+                <h4>Website</h4>
+                <p>kmstudio.tech</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <h4>Serving</h4>
+                <p>Clients Worldwide</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:36px; padding:20px; background:var(--bg-card); border-radius:12px; border:1px solid var(--border);">
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">
+              <strong style="color:var(--accent);">Response Time:</strong> We typically reply to all inquiries within 24 hours on business days.
+            </p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:20px; font-size:1.3rem;">Project Inquiry Form</h3>
+          <!-- 
+            To make this form receive real leads:
+            1. Go to https://formspree.io and create a free account
+            2. Create a new form and get your form endpoint
+            3. Replace the action URL below with your Formspree endpoint
+            Example: action="https://formspree.io/f/xxxxxxxx"
+          -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New Lead Inquiry - KMStudio.tech">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Your Company">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="ai-automation">AI Automation</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-apps">Mobile App Development</option>
+                <option value="digital-marketing">Digital Marketing</option>
+                <option value="full-package">Full Package (Multiple Services)</option>
+                <option value="consultation">Free Consultation Only</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Approximate Budget (Optional)</label>
+              <select id="budget" name="budget">
+                <option value="">Select range</option>
+                <option value="under-50k">Under ₹50,000</option>
+                <option value="50k-1lakh">₹50,000 – ₹1 Lakh</option>
+                <option value="1-3lakh">₹1 Lakh – ₹3 Lakh</option>
+                <option value="3-5lakh">₹3 Lakh – ₹5 Lakh</option>
+                <option value="5lakh-plus">₹5 Lakh+</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details / Requirements *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project goals, timeline, and any specific requirements..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Submit Inquiry →</button>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:14px; text-align:center;">
+              By submitting, you agree to be contacted by KMStudio regarding your inquiry.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;">
+              <path d="M8 8 L8 40 L18 40 L18 28 L28 40 L40 40 L26 24 L40 8 L28 8 L18 20 L18 8 Z" fill="#0A1628" stroke="#00D4FF" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="2" fill="#00D4FF"/>
+              <circle cx="12" cy="36" r="2" fill="#00D4FF"/>
+              <circle cx="36" cy="12" r="2" fill="#00D4FF"/>
+              <circle cx="36" cy="36" r="2" fill="#00D4FF"/>
+            </svg>
+            <span class="logo-text">KM<span>Studio</span></span>
+          </a>
+          <p>Intelligent Systems. Powerful Apps. Measurable Growth. Building the future of digital business.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">AI Automation</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Mobile Apps</a></li>
+            <li><a href="#services">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:info@kmstudio.tech">info@kmstudio.tech</a></li>
+            <li><a href="tel:+919998957265">+91 99989 57265</a></li>
+            <li><a href="https://kmstudio.tech">kmstudio.tech</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KMStudio. All rights reserved.</p>
+        <p>Built with precision for the intelligent web.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
